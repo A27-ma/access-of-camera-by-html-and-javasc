@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: black;
+    }
+    /* .box {
+        background-color: blue;
+        height: 300px;
+        width: 500px;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        border: 3px solid black;
+    } */
+     div button{
+        background-color: black;
+        color: aliceblue;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+
+    }
+
+    #video{
+        background-color: blue;
+        height: 300px;
+        width: 500px;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        border: 3px solid black;
+    }
+
+    .box :hover{
+        background-color: aqua;
+        display: block;
+        margin: auto;
+        justify-content: center;
+        height: auto;
+        width: fit-content;
+        color: darkblue;
+
+    }
+
+
+</style>
+<body>
+    <div class="box">
+        <video id="video" autoplay></video>
+        <div>
+        <button onclick="opencamera()">open camera</button>
+    </div>
+    </div>
+
+
+
+    <script>
+        async function opencamera(){
+            const stream = await navigator.mediaDevices.getUserMedia({video:true});
+            video.srcObject = stream
+
+        }
+
+    </script>
+</body>
+</html>
